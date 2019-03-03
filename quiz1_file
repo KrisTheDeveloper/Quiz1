@@ -1,0 +1,46 @@
+import numpy as np
+
+a = np.random.randn(5, 5, 3)
+print(a.shape)
+
+a = a.reshape(3*5*5,1)
+print("//////")
+np.set_printoptions(precision=3)
+print(a.shape)
+print('\n')
+a = np.random.randn(2, 3) # a.shape = (2, 3)
+b = np.random.randn(2, 1) # b.shape = (2, 1)
+c = a + b
+print(c.shape)
+
+print('\n')
+a = np.random.randn(4, 3) # a.shape = (4, 3)
+b = np.random.randn(3, 2) # b.shape = (3, 2)
+#c = a*b
+#print(c.shape)
+
+a = np.random.randn(12288, 150) # a.shape = (12288, 150)
+b = np.random.randn(150, 45) # b.shape = (150, 45)
+c = np.dot(a,b)
+print(c.shape)
+
+print('\n')
+a = np.random.randn(3,4)
+b = np.random.randn(4,1)
+# a.shape = (3,4)
+# b.shape = (4,1)
+
+for i in range(3):
+  for j in range(4):
+    c[i][j] = a[i][j] + b[j]
+print(c)
+
+print('\n')
+c = a + b.T
+print(c)
+
+print('\n')
+a = np.random.randn(3, 3)
+b = np.random.randn(3, 1)
+c = a*b
+print(c.shape)
